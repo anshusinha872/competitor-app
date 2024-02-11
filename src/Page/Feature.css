@@ -1,0 +1,199 @@
+.featureContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  min-height: 100vh;
+}
+.leftcontainer {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 20px;
+  border-radius: 10px 0 0 10px;
+  background-color: #06132a;
+  color: #fff;
+}
+.textHeader {
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.subtext {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  color: #06132a;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #f5f5f5;
+}
+.btn:hover {
+  background-color: #06132a;
+  border: 2px solid #f5f5f5;
+  color: #f5f5f5;
+}
+.tabcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+}
+.tab {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #f5f5f5;
+}
+.rightcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  min-height: 95vh;
+  padding: 0 20px;
+  background-image: url("https://cdn.dribbble.com/users/21459/screenshots/2843021/dixa_marketing_bg_blue-dribbble.png?resize=800x600&vertical=center");
+}
+@media (max-width: 576px) {
+    .featureContainer {
+        margin-top: 2rem;
+        flex-direction: column;
+        padding: 0;
+    }
+    .textHeader {
+        font-size: 28px;
+        font-weight: 400;
+    }
+    .subtext {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .btn {
+        font-size: 16px;
+    }
+    .tabcontainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .tab {
+        padding: 10px 20px;
+        margin-bottom: 1rem;
+    }
+    .leftcontainer {
+        width: 100%;
+        border-radius: 0px 0px 0 0;
+        padding: 10px;
+    }
+    .rightcontainer {
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+    }
+    .tabcontainer {
+        flex-direction: column;
+    }
+    .tab {
+        margin-bottom: 1rem;
+    }
+    .iconcontainer{
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+    }
+    .iconimg{
+        width: 40px;
+    }
+    .text{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .featureContainer {
+        flex-direction: column;
+    }
+    .leftcontainer {
+        width: 100%;
+        border-radius: 0px 0px 0 0;
+        padding: 10px;
+    }
+    .rightcontainer {
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+    }
+    .tabcontainer {
+        flex-direction: column;
+    }
+    .tab {
+        margin-bottom: 1rem;
+    }
+    .iconcontainer{
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+    }
+    .iconimg{
+        width: 40px;
+    }
+    .text{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 993px) {
+    .featureContainer {
+        flex-direction: row;
+    }
+    .leftcontainer {
+        width: 70%;
+        border-radius: 10px 0 0 10px;
+        padding: 20px;
+    }
+    .rightcontainer {
+        width: 30%;
+        border-radius: 0 10px 10px 0;
+    }
+    .tabcontainer {
+        flex-direction: row;
+    }
+    .tab {
+        margin-bottom: 0;
+    }
+    .iconcontainer{
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+    }
+    .iconimg{
+        width: 40px;
+    }
+    .text{
+        font-size: 18px;
+    }
+}
+
+/* Additional adjustments for larger screens if needed */
+@media (min-width: 1200px) {
+  /* Add your styles here for screens larger than 1200px */
+}

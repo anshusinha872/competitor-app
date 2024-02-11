@@ -4,8 +4,11 @@ import { doc, setDoc } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 import toast, { Toaster } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
+import { Footer } from "./Footer";
+import {Feature} from "./Feature";
+// import { Link } from "../assets/5031659-removebg.png";
 export const Home = () => {
-    const form = useRef();
+  const form = useRef();
 
   const [email, setEmail] = useState("");
   const handleEmailChange = (e) => {
@@ -35,12 +38,27 @@ export const Home = () => {
       toast.dismiss();
       toast.success("Your email has been saved!");
       toast.success("We will notify you when we launch!");
-      emailjs.sendForm('service_oexx9dg', 'template_5e66ffk', form.current, 'AUMuFH8PLDprKG6cT')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+      emailjs
+        .sendForm(
+          "service_oexx9dg",
+          "template_5e66ffk",
+          form.current,
+          "AUMuFH8PLDprKG6cT"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+      // emailjs.sendForm('service_oexx9dg', 'template_ujpbepe', form.current, 'AUMuFH8PLDprKG6cT')
+      // .then((result) => {
+      //     console.log(result.text);
+      // }, (error) => {
+      //     console.log(error.text);
+      // });
     } catch (e) {
       console.log(e);
       console.error("Error saving email to Firestore:", e);
@@ -229,30 +247,36 @@ export const Home = () => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Vehicula massa in enim luctus. Rutrum arcu.
                   </p>
-
-                  <form ref={form} id="myForm" onSubmit={sendEmail} className="mt-8 sm:mt-10">
-                    <div className="relative p-2 sm:border sm:border-gray-400 group sm:rounded-xl sm:focus-within:ring-1 sm:focus-within:ring-gray-900 sm:focus-within:border-gray-900">
-                      <input
-                        type="email"
-                        name="user_email"
-                        id=""
-                        onChange={handleEmailChange}
-                        value={email}
-                        placeholder="Enter email address"
-                        className="block w-full px-4 py-4 text-gray-900 placeholder-gray-900 bg-transparent border border-gray-400 outline-none focus:border-gray-900 focus:ring-1 focus:ring-gray-900 rounded-xl sm:border-none sm:focus:ring-0 sm:focus:border-transparent"
-                        required=""
-                      />
-                      <div className="mt-4 sm:mt-0 sm:absolute sm:inset-y-0 sm:right-0 sm:flex sm:items-center sm:pr-2">
-                        <button
-                          type="button"
-                          onClick={sendEmail}
-                          className="inline-flex px-6 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 rounded-lg focus:outline-none focus:bg-gray-600 font-pj hover:bg-gray-600"
-                        >
-                          Get Free Card
-                        </button>
+                  <span className="w-2/4">
+                    <form
+                      ref={form}
+                      id="myForm"
+                      onSubmit={sendEmail}
+                      className="mt-8 sm:mt-10"
+                    >
+                      <div className="relative p-2 sm:border sm:border-gray-400 group sm:rounded-xl sm:focus-within:ring-1 sm:focus-within:ring-gray-900 sm:focus-within:border-gray-900">
+                        <input
+                          type="email"
+                          name="user_email"
+                          id=""
+                          onChange={handleEmailChange}
+                          value={email}
+                          placeholder="Enter email address"
+                          className="block w-full px-4 py-4 text-gray-900 placeholder-gray-900 bg-transparent border border-gray-400 outline-none focus:border-gray-900 focus:ring-1 focus:ring-gray-900 rounded-xl sm:border-none sm:focus:ring-0 sm:focus:border-transparent"
+                          required=""
+                        />
+                        <div className="mt-4 sm:mt-0 sm:absolute sm:inset-y-0 sm:right-0 sm:flex sm:items-center sm:pr-2">
+                          <button
+                            type="button"
+                            onClick={sendEmail}
+                            className="inline-flex px-6 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 rounded-lg focus:outline-none focus:bg-gray-600 font-pj hover:bg-gray-600"
+                          >
+                            Get Free Card
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  </form>
+                    </form>
+                  </span>
                 </div>
 
                 <div className="flex items-center justify-center mt-10 space-x-6 lg:justify-start sm:space-x-8">
@@ -326,14 +350,15 @@ export const Home = () => {
               <div>
                 <img
                   className="w-full"
-                  src="https://d33wubrfki0l68.cloudfront.net/a78a55b3add0dc26d3587d02ecc23bebc28bf5f8/67091/images/hero/5.2/illustration.png"
+                  src={require("../assets/5031659-removebg.png")}
                   alt=""
                 />
               </div>
             </div>
+
           </div>
         </section>
-        <section className="py-10 bg-gray-50 sm:pt-16 lg:pt-24">
+        <section className="py-10 hidden bg-gray-50 sm:pt-16 lg:pt-24">
           <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
               <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
@@ -566,6 +591,8 @@ export const Home = () => {
           </div>
         </section>
       </div>
+      <Feature />
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,122 @@
+.title {
+  text-align: center;
+  color: #000;
+  margin-top: 50px;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.card {
+  padding: 0rem 15rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ece5e0;
+  background-color: #1f2036;
+  text-align: center;
+  font-weight: 500;
+  padding: 0 2.5rem; /* Moved padding here from .subtextcontainer */
+}
+
+.subtextcontainer {
+  font-weight: 400;
+}
+.subtextheader{
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+/* Add media queries */
+@media (max-width: 576px) {
+  .card {
+    padding: 0rem 1rem;
+    flex-direction: column;
+  }
+  .textContainer {
+    height: auto;
+    padding: 1rem 0;
+  }
+  .title {
+    font-size: 0.876rem;
+    padding: 0 1rem;
+  }
+  .text{
+    font-size: 0.876rem;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .card {
+    padding: 0rem 5rem;
+  }
+  .imageContainer{
+    height: 250px;
+  }
+  .textContainer{
+    height: 250px;
+    width: 440px;
+  }
+  .imageShift {
+    /* padding-left: 0rem !important; */
+  }
+  .text{
+    font-size: 1rem;
+  }
+  .subtextheader{
+    font-size: 1.5rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 993px) {
+  .card {
+    padding: 0rem 10rem;
+  }
+  .imageContainer{
+    height: 250px;
+  }
+  .textContainer{
+    height: 250px;
+    width: 440px;
+  }
+  .imageShift {
+    padding-left: 0rem !important;
+  }
+  .text{
+    font-size: 1rem;
+  }
+  .subtextheader{
+    font-size: 1.5rem;
+  }
+}
+
+/* Additional adjustments for larger screens if needed */
+@media (min-width: 1200px) {
+  /* Add your styles here for screens larger than 1200px */
+}
